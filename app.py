@@ -1,5 +1,6 @@
 import requests
-import pandas as pd
+from flask import Flask,request
+
 def send_text(rp_token,mes):
     json_data = {
         'replyToken': rp_token,
@@ -8,7 +9,6 @@ def send_text(rp_token,mes):
     print(rp_token)
     response = requests.post('https://api.line.me/v2/bot/message/reply', headers=headers, json=json_data)
     print(response.text)
-    from flask import Flask,request
 
 headers = {
     'Content-Type': 'application/json',
