@@ -1,6 +1,7 @@
 import requests
 from flask import Flask,request
-
+import os
+channel_access_token = os.environ.get('channel_access_token')
 def send_text(rp_token,mes):
     json_data = {
         'replyToken': rp_token,
